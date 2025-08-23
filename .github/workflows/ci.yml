@@ -50,7 +50,7 @@ jobs:
     name: Publish npm package
     runs-on: ubuntu-latest
     needs: test
-    if: success()  # s’assure que les tests sont passés
+    if: success()
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
