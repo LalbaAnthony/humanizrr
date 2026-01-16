@@ -8,5 +8,6 @@ Features:
 - [ ] https://www.instagram.com/reel/DI36BoQsphS/
 
 Misc:
+- [ ] Passer en TS
 - [ ] Write README Documentation
 - [ ] Tests
