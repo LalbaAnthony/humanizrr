@@ -17,7 +17,7 @@ const humanizrr = require('humanizrr');
 
 const text = "I am the one who knocks.";
 console.log(humanizrr.typos.make(text, { keyboard: 'qwerty' }));
-// Output will be something like: "I am the one who knoks."
+// Will output be something like: "I am the one who knoks."
 ```
 
 ### Format
@@ -27,5 +27,5 @@ const humanizrr = require('humanizrr');
 
 const text = "This is an example sentence 😎 !";
 console.log(humanizrr.format.removeEmojis(text));
-// Output: "This is an example sentence !"
+// Will output: "This is an example sentence !"
 ```

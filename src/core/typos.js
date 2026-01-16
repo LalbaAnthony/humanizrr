@@ -1,4 +1,4 @@
-// src/utils/typos.js
+// src/core/typos.js
 
 const randomBool = require('../helpers/randomBool');
 const randomLetter = require('../helpers/randomLetter');

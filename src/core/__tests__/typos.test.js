@@ -1,6 +1,6 @@
-// src/utils/__tests__/typos.test.js
+// src/core/__tests__/typos.test.js
 
-const { allTypes, defaultOptions, make } = require('../../utils/typos');
+const { allTypes, defaultOptions, make } = require('../typos');
 
 // Mock des dépendances
 jest.mock('../../helpers/randomBool');
