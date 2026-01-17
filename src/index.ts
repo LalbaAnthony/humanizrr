@@ -9,4 +9,3 @@ const humanizrr = {
 };
 
 export default humanizrr;
-
