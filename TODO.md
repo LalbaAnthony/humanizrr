@@ -11,9 +11,6 @@ Features:
 - [ ] https://www.instagram.com/reel/DI36BoQsphS/
 
 Misc:
-- [ ] Passer en TS
-  - [ ] Code
-  - [ ] CI/CD
+- [ ] Recheck publish avec chg TS
 - [ ] Write README Documentation
-- [ ] Add linter to pipe
 - [ ] Tests
