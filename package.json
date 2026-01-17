@@ -43,7 +43,7 @@
         "eslint": "^9.33.0",
         "eslint-plugin-node": "^11.1.0",
         "globals": "^16.3.0",
-        "jest": "^29.7.0",
+        "jest": "^30.2.0",
         "jiti": "^2.5.1",
         "nodemon": "^3.1.10",
         "ts-jest": "^29.4.6",

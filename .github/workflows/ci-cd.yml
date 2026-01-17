@@ -9,8 +9,6 @@ on:
       - "package-lock.json"
       - "tsconfig.json"
       - "eslint.config.*"
-    tags:
-      - "v*"
 
 jobs:
   ci:
