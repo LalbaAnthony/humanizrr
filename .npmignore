@@ -2,7 +2,7 @@
 .github/
 tests/
 __tests__/
-*.test.js
+*.test.ts
 
 # Misc
 TODO.md
