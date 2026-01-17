@@ -2,6 +2,8 @@
 
 humanizrr is a Node.js library that provides methods for humanizing strings for AI-generated content.
 
+Available at: [https://www.npmjs.com/package/humanizrr](https://www.npmjs.com/package/humanizrr)
+
 ## 🚀 - Installation
 
 ```bash
