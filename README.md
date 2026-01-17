@@ -17,6 +17,10 @@ WIP
 ## 🛠️ - Development
 
 ```bash
+# Prepare a release build
+npm pack --dry-run
+
+# Bump version and push tags
 npm version patch
 git push --follow-tags
 ```

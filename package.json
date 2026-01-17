@@ -1,9 +1,15 @@
 {
     "name": "humanizrr",
-    "version": "2.0.0",
+    "version": "3.0.0",
     "description": "humanizrr provides methods for humanizing strings for AI-generated content.",
     "private": false,
     "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "files": [
+        "dist",
+        "README.md",
+        "LICENSE"
+    ],
     "publishConfig": {
         "access": "public"
     },
@@ -13,7 +19,8 @@
         "test": "jest",
         "lint": "eslint src --ext .ts",
         "build": "tsc",
-        "typecheck": "tsc --noEmit"
+        "typecheck": "tsc --noEmit",
+        "prepublishOnly": "npm run build"
     },
     "repository": {
         "type": "git",

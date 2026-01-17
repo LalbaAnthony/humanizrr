@@ -1,8 +1,13 @@
 # Dev files
-.github/
-tests/
+src/
 __tests__/
-*.test.ts
+*.ts
+*.mts
+eslint.config.*
+jest.config.*
+nodemon.json
+tsconfig.json
+.github/
 
 # Misc
 TODO.md
