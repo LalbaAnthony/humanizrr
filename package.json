@@ -1,13 +1,19 @@
 {
     "name": "humanizrr",
-    "version": "1.0.4",
+    "version": "2.0.0",
     "description": "humanizrr provides methods for humanizing strings for AI-generated content.",
     "private": false,
-    "main": "src/index.js",
+    "main": "dist/index.js",
+    "publishConfig": {
+        "access": "public"
+    },
     "scripts": {
-        "start": "node src/playground.js",
-        "dev": "nodemon src/playground.js",
-        "test": "jest"
+        "start": "node dist/playground.js",
+        "dev": "ts-node-dev --respawn --transpile-only src/playground.ts",
+        "test": "jest",
+        "lint": "eslint src --ext .ts",
+        "build": "tsc",
+        "typecheck": "tsc --noEmit"
     },
     "repository": {
         "type": "git",
@@ -26,13 +32,24 @@
     ],
     "author": "Anthony Lalba",
     "license": "MIT",
-    "devDependencies": {
-        "jest": "^29.7.0",
-        "nodemon": "^3.1.10"
+    "dependencies": {
+        "ts-node": "^10.9.2"
     },
-    "jest": {
-        "testMatch": [
-            "**/?(*.)+(spec|test).[tj]s?(x)"
-        ]
+    "devDependencies": {
+        "@types/jest": "^29.5.14",
+        "@types/node": "^24.2.1",
+        "@typescript-eslint/eslint-plugin": "^8.39.0",
+        "@typescript-eslint/parser": "^8.39.0",
+        "eslint": "^9.33.0",
+        "eslint-plugin-node": "^11.1.0",
+        "globals": "^16.3.0",
+        "jest": "^29.7.0",
+        "jiti": "^2.5.1",
+        "nodemon": "^3.1.10",
+        "ts-jest": "^29.4.6",
+        "ts-node": "^10.9.2",
+        "ts-node-dev": "^2.0.0",
+        "typescript": "^5.8.3",
+        "typescript-eslint": "^8.39.0"
     }
 }

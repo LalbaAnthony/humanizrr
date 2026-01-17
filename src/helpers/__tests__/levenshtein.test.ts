@@ -1,6 +1,7 @@
-test('Test levenshtein', () => {
-    const levenshtein = require('../levenshtein');
+import { expect, test } from '@jest/globals'
+import levenshtein from '../levenshtein';
 
+test('Test levenshtein', () => {
     expect(levenshtein('kitten', 'sitting')).toBe(3);
     expect(levenshtein('flaw', 'lawn')).toBe(2);
     expect(levenshtein('intention', 'execution')).toBe(5);

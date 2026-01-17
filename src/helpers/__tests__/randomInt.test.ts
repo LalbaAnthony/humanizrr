@@ -1,6 +1,7 @@
-test('Test randomInt', () => {
-    const randomInt = require('../randomInt');
+import { expect, test } from '@jest/globals'
+import randomInt from '../randomInt';
 
+test('Test randomInt', () => {
     // Test the function multiple times to check for randomness
     const results = Array.from({ length: 1000 }, () => randomInt(0, 100));
 

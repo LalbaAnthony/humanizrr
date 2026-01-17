@@ -10,22 +10,15 @@ npm install humanizrr
 
 ## ✒️ - Usage
 
-### Make typos
+WIP
 
-```javascript
-const humanizrr = require('humanizrr');
+## 🛠️ - Development
 
-const text = "I am the one who knocks.";
-console.log(humanizrr.typos.make(text, { keyboard: 'qwerty' }));
-// Will output be something like: "I am the one who knoks."
+```bash
+npm version patch
+git push --follow-tags
 ```
 
-### Format
+## 📄 - License
 
-```javascript
-const humanizrr = require('humanizrr');
-
-const text = "This is an example sentence 😎 !";
-console.log(humanizrr.format.removeEmojis(text));
-// Will output: "This is an example sentence !"
-```
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

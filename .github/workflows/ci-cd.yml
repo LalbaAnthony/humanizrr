@@ -2,57 +2,53 @@ name: Publish to npm
 
 on:
   push:
-    branches:
-      - main
     paths:
       - "src/**"
       - ".github/**"
+      - "package.json"
+      - "tsconfig.json"
+      - "eslint.config.*"
+    tags:
+      - "v*"
 
 jobs:
-  install:
-    name: Install dependencies
+  ci:
+    name: Lint, Test, Build
     runs-on: ubuntu-latest
-    outputs:
-      cache-hit: ${{ steps.cache.outputs.cache-hit }}
+
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: "22"
-          registry-url: "https://registry.npmjs.org/"
+          cache: "npm"
 
       - name: Install dependencies
         run: npm ci
 
-  test:
-    name: Run tests
-    runs-on: ubuntu-latest
-    needs: install
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+      - name: Type check
+        run: npm run typecheck
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "22"
-
-      - name: Install dependencies
-        run: npm ci
+      - name: Lint
+        run: npm run lint
 
       - name: Run tests
         run: npm test
 
+      - name: Build
+        run: npm run build
+
   publish:
-    name: Publish npm package
+    name: Publish to npm
     runs-on: ubuntu-latest
-    needs: test
-    if: success()
+    needs: ci
+    if: github.ref == 'refs/heads/main'
+
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Setup Node.js
@@ -60,11 +56,15 @@ jobs:
         with:
           node-version: "22"
           registry-url: "https://registry.npmjs.org/"
+          cache: "npm"
 
       - name: Install dependencies
         run: npm ci
 
-      - name: Publish to npm
+      - name: Build
+        run: npm run build
+
+      - name: Publish
         run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
